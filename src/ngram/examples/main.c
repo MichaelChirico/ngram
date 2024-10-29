@@ -82,7 +82,6 @@ int main_gen(const int n, const char *str, const int genlen, const int seed)
 {
   wordlist_t *wl;
   ngramlist_t *ngl;
-  int ngsize;
   wl = lex(str, strlen(str));
   ngl = process(wl, n);
   
@@ -130,11 +129,9 @@ void ngram_set_main_flags(ngram_opts_t *opts, int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-  int n = 3;
   /*  const char *str = "A A A B A B B A";*/
 /*  const int genlen = 20;*/
   const char *str = "A B A C A B B";
-  const int genlen = 10;
   const uint32_t seed = 1234;
   
   ngram_opts_t opts;
